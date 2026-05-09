@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-gradient-to-b from-slate-50 via-prime-50 to-slate-50;
+  @apply text-slate-900;
+  @apply font-sans;
+}
+
+/* Custom scrollbar - Modern blue theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-prime-400 rounded-full;
+  border: 3px solid #f8fafc;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-prime-500;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Button base styles */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-semibold text-white;
+    background: linear-gradient(to right, #0284c7, #0369a1);
+    @apply hover:shadow-xl active:scale-95 transition-all duration-200;
+    @apply shadow-lg;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary:hover {
+    background: linear-gradient(to right, #0369a1, #075985);
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold;
+    @apply bg-slate-100 text-slate-700;
+    @apply hover:bg-slate-200 active:scale-95;
+    @apply transition-all duration-200;
+  }
+
+  .btn-accent {
+    @apply px-6 py-3 rounded-lg font-semibold text-white;
+    background: linear-gradient(to right, #d92d20, #b42318);
+    @apply active:scale-95 transition-all duration-200;
+  }
+
+  .btn-accent:hover {
+    background: linear-gradient(to right, #b42318, #912018);
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md hover:shadow-lg;
+    @apply transition-all duration-300;
+    @apply border border-slate-100;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg;
+    @apply border border-slate-200 bg-white;
+    @apply focus:outline-none focus:ring-2 focus:ring-prime-500 focus:border-transparent;
+    @apply transition-all duration-200;
+  }
+
+  .input-field::placeholder {
+    @apply text-slate-400;
+  }
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-white/80 backdrop-blur-xs border border-white/20;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #0284c7, #d92d20);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+/* Hover scale effect */
+.hover-scale {
+  @apply transition-transform duration-300 hover:scale-105;
+}
+
+/* Professional gradients */
+.gradient-primary {
+  @apply bg-gradient-to-br from-prime-600 via-prime-700 to-prime-900;
+}
+
+.gradient-accent {
+  @apply bg-gradient-to-br from-accent-600 via-accent-700 to-accent-900;
+}
