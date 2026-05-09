@@ -16,6 +16,7 @@ export default function AdminDashboard() {
     price: '',
     stockQuantity: '',
     imageUrl: '',
+    category: '',
   })
   const { logout } = useAuth()
 
@@ -60,6 +61,7 @@ export default function AdminDashboard() {
       price: product.price.toString(),
       stockQuantity: product.stockQuantity.toString(),
       imageUrl: product.imageUrl || '',
+      category: product.category || '',
     })
     setTab('products')
   }
@@ -106,6 +108,7 @@ export default function AdminDashboard() {
       price: '',
       stockQuantity: '',
       imageUrl: '',
+      category: '',
     })
   }
 
@@ -309,6 +312,25 @@ export default function AdminDashboard() {
                     onChange={(e) => setFormData({ ...formData, imageUrl: e.target.value })}
                     className="input-field"
                   />
+                </div>
+
+                <div className="md:col-span-2">
+                  <label className="block text-slate-700 font-semibold mb-2">Category *</label>
+                  <select
+                    value={formData.category}
+                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                    className="input-field"
+                  >
+                    <option value="">Select a category</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Wood">Wood</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Books">Books</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Home">Home</option>
+                    <option value="Sports">Sports</option>
+                  </select>
                 </div>
               </div>
 
